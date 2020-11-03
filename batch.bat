@@ -2,7 +2,7 @@
 
 "C:\Program Files\CodeBlocks\MinGW\bin"\g++ -c main.cpp
 
-g++ -o test.exe main.o calculator.o
+"C:\Program Files\CodeBlocks\MinGW\bin"\g++ -o test.exe main.o calculator.o
 
 test.exe
 
