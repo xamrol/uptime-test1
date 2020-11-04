@@ -1,4 +1,4 @@
-"C:\Program Files\CodeBlocks\MinGW\bin\g++.exe" -Wall -fexceptions -g  -c calculator.cpp main.cpp
+"C:\Program Files\CodeBlocks\MinGW\bin\gcc.exe" -Wall -fexceptions -g  -c calculator.cpp main.cpp
 
 "C:\Program Files\CodeBlocks\MinGW\bin\g++.exe" -o test.exe calculator.o main.o
 
