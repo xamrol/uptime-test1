@@ -1,5 +1,3 @@
-cmd /c
-
 "C:\Program Files\CodeBlocks\MinGW\bin"\g++.exe -c calculator.cpp
 
 "C:\Program Files\CodeBlocks\MinGW\bin"\g++.exe -c main.cpp
