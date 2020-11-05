@@ -6,6 +6,8 @@
 class TimeConversion {
 public:
     TimeConversion();
+    std::string calculerUptimeIdle(double const& timevalue);
+    std::string getLocalTime();
 };
 
 
