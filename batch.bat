@@ -2,5 +2,5 @@
 "C:\MinGW\bin\g++.exe" -c main.cpp
 "C:\MinGW\bin\g++.exe" -o app calculator.o main.o
 app.exe
-"C:\Program Files\Cppcheck\cppcheck.exe" --verbose --enable=all --enable=style --xml --output-file=cppCheckResults.xml .
+"C:\Program Files\Cppcheck\cppcheck.exe" --check-config --xml --output-file=cppCheckResults.xml --verbose .
 start CppCheckResults.xml
