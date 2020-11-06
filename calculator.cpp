@@ -9,7 +9,10 @@ using namespace std;
 // Constructor
 TimeConversion::TimeConversion()
 {
-    //
+	nbJours = 0;
+	nbHeures = 0;
+	nbMinutes = 0;
+	nbSecondes= 0;
 }
 
 /*
@@ -115,14 +118,44 @@ string TimeConversion::getLocalTime()
     string actualLocalTime;
     time_t timer1;
     time(&timer1);
-    int secondes, minutes, heures;
+   // int secondes, minutes, heures;
     struct tm *newTime1;
     newTime1 = localtime(&timer1);
-    heures = newTime1->tm_hour;		// Getting the hours
-    minutes = newTime1->tm_min;		// Getting the minutes
-    secondes = newTime1->tm_sec;	// Getting the seconds
+    nbHeures = newTime1->tm_hour;		// Getting the hours
+    nbMinutes = newTime1->tm_min;		// Getting the minutes
+    nbSecondes = newTime1->tm_sec;	// Getting the seconds
 
-    actualLocalTime = ((heures>9)? to_string(heures):'0'+to_string(heures)) + ':' + ((minutes>9)? to_string(minutes):'0'+to_string(minutes)) + ':' + ((secondes>9)? to_string(secondes):'0'+to_string(secondes));
+    actualLocalTime = ((nbHeures>9)? to_string(nbHeures):'0'+to_string(nbHeures)) + ':' + ((nbMinutes>9)? to_string(nbMinutes):'0'+to_string(nbMinutes)) + ':' + ((nbSecondes>9)? to_string(nbSecondes):'0'+to_string(nbSecondes));
 
     return actualLocalTime;
+}
+
+void TimeConversion::check_file_value(double const& uptm, double const& idle){
+    if (uptm<0 || idle<0)
+    {
+         cout << "erreur: \"Une valeur est negative dans le fichier!\"" << endl;
+         exit(1);
+    }
+    else if (uptm < idle)
+        {
+             cout << "erreur: \"uptime ne peux pas etre plus petit que idle !\"" << endl; 
+             exit(1);
+        }
+        else {
+            cout << "\"Les valeurs du fichier sont correctes !\"" << endl;
+        }
+
+}
+
+int TimeConversion::GetNbjours(){
+    return nbJours;
+}
+int TimeConversion::GetNbMinutes(){
+    return nbMinutes;
+}
+int TimeConversion::GetNbSecondes(){
+    return nbSecondes;
+}
+int TimeConversion::GetNbHeures(){
+    return nbHeures;
 }
